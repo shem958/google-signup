@@ -21,3 +21,22 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 export { auth, provider };
+
+/* 
+initializeApp: This function initializes a Firebase application using the configuration provided.
+getAuth: This function initializes and returns the authentication service from Firebase.
+GoogleAuthProvider: This is a class provided by Firebase Authentication to enable Google Sign-In for users.
+Firebase configuration object: 
+apiKey: A unique identifier for your Firebase project, used for API requests.
+authDomain: The domain where your Firebase Authentication will be hosted.
+projectId: The unique identifier for your Firebase project.
+storageBucket: The storage location for your Firebase project's files.
+messagingSenderId: The sender ID used for Firebase Cloud Messaging.
+appId: The unique identifier for the app.
+measurementId: An identifier for Google Analytics (optional). 
+initializeApp(firebaseConfig): This initializes your Firebase app with the provided configuration object. The app variable holds the initialized app instance.
+getAuth(app): Initializes the Firebase Authentication service with the app instance. The auth variable holds the authentication instance.
+GoogleAuthProvider: Initializes a new Google Auth Provider instance, which will be used to handle Google sign-in.
+export { auth, provider }: Exports the auth and provider instances so they can be imported and used in other parts of your application
+
+*/
