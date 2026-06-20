@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Secure Google Sign-In Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modernized, secure, and premium React web application template built with **Vite** and **TypeScript**, powered by **Firebase Authentication** and styled using responsive **Vanilla CSS** glassmorphic designs.
+
+---
+
+## Features
+
+- ⚡️ **Vite 8 & TypeScript 6:** Near-instantaneous Hot Module Replacement (HMR) and strict compile-time type safety.
+- 🔐 **Secure Environment Architecture:** No hardcoded Firebase configuration keys committed to version control. All secrets are managed using git-ignored local environment files.
+- 👤 **Persistent Global Authentication:** Leverages Firebase's native `onAuthStateChanged` observable listener wrapped in a global React Context (`AuthProvider`) to synchronize session data cleanly across page reloads without UI flickering.
+- 📱 **Flexible Auth Flow & Block Fallbacks:** Integrated switcher to toggle between **Popup Window** and **Page Redirect** modes, preventing mobile Safari/Chrome popup blocker interruptions.
+- 💎 **Premium Glassmorphic UI:** Sleek modern interface with glow highlights, subtle hover animations, dynamic visual focus outlines (for enhanced digital accessibility/a11y), and a cybernetic nebula starfield background.
+- 🔔 **Graceful UI Toast Alerts:** Interactive success and error feedback notifications powered by `react-hot-toast` (e.g., handling closed popups or blocker issues cleanly).
+- ⏳ **Seamless Skeleton Loader:** Displays a matching glassmorphic skeleton card during authentication checks to ensure a polished user experience.
+
+---
+
+## Directory Structure
+
+```text
+src/
+├── components/      # Reusable UI components (Button, Card, Loader/Skeleton)
+├── config/          # Firebase SDK initialization and setup
+├── context/         # AuthContext provider containing user status observables
+├── hooks/           # Custom hook utilities (useAuth)
+├── styles/          # Core CSS variables, layout stylesheets, and global rules
+├── App.tsx          # Main dashboard coordinator page
+├── index.tsx        # React mount entrypoint
+└── vite-env.d.ts    # Vite compiler type definitions
+```
+
+---
+
+## Getting Started
+
+### 1. Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### 2. Set Up Environment Variables
+Create a file named `.env.local` in the root of the project and populate it with your Firebase app configuration parameters:
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
+```
+
+### 3. Install Dependencies
+Install all package configurations:
+
+```bash
+npm install
+```
+
+### 4. Start the Application
+Run the local Vite development server:
+
+```bash
+npm run dev
+```
+By default, the server runs on [http://localhost:3000](http://localhost:3000).
+
+---
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **`npm run dev`**: Starts the Vite dev server with fast refresh.
+- **`npm run build`**: Compiles TypeScript files (`tsc`) and builds the optimized production assets to the `/dist` directory.
+- **`npm run preview`**: Runs a local server to preview the built production assets.
